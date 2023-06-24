@@ -1,6 +1,6 @@
 package Inheritance;
 
-public class Car {
+public class car {
     //Here is a class "Car"
     String carColor;
     String carType;
@@ -8,7 +8,7 @@ public class Car {
     String carBrand;
     int carDoors;
 
-    public Car(String carColor, String carType, String carOrigin, String carBrand, int carDoors) {
+    public car(String carColor, String carType, String carOrigin, String carBrand, int carDoors) {
         this.carColor = carColor;
         this.carType = carType;
         this.carOrigin = carOrigin;
@@ -56,8 +56,8 @@ public class Car {
     public boolean equals (Object o){
         if (this == o) return true;
         if (o == null) return false;
-        if (!(o instanceof Car)) return false;
-        Car car = (Car) o;
+        if (!(o instanceof car)) return false;
+        car car = (car) o;
         return carColor == car.carColor;
     }
 

@@ -7,6 +7,11 @@ package Inheritance;
      public String toString(){
          return "This is an animal from class Dragon.";
      }
+     @Override
+     public void printingSomething (){
+         //This method overrides an abstract method.
+         System.out.println("This is a Dragon.");
+     }
 }
 
 
