@@ -1,2 +1,5 @@
-package Inheritance;public interface flyable {
+package Inheritance;
+
+public interface flyable {
+    void flying();
 }

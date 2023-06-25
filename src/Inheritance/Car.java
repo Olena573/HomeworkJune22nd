@@ -1,21 +1,21 @@
 package Inheritance;
 
-public class car {
+public class Car {
     //Here is a class "Car"
-    String carColor;
-    String carType;
-    String carOrigin;
-    String carBrand;
-    int carDoors;
+   private String carColor;
+   private String carType;
+   private String carOrigin;
+   private String carBrand;
+   private int carDoors;
 
-    public car(String carColor, String carType, String carOrigin, String carBrand, int carDoors) {
+    public Car (String carColor, String carType, String carOrigin, String carBrand, int carDoors) {
         this.carColor = carColor;
         this.carType = carType;
         this.carOrigin = carOrigin;
         this.carBrand = carBrand;
         this.carDoors = carDoors;
 
-        //  car.someSound();
+        //  Car.someSound();
     }
     public String getCarColor (){
         return carColor;
@@ -23,11 +23,6 @@ public class car {
     public String getCarType (){
         return carType;
     }
-
-    public int getCarDoors (){
-        return carDoors;
-    }
-
     public String getCarOrigin (){
         return carOrigin;
     }
@@ -35,29 +30,70 @@ public class car {
         return carBrand;
     }
 
-    public void setCarColor(String carColor){
-        this.carColor = carColor;
-    }
-    public void setCarType (String carType){
-        this.carType = carType;
-    }
-    public void setCarDoors (int carDoors){
-        this.carDoors = carDoors;
+    public int getCarDoors (){
+        return carDoors;
     }
 
-    public void carOrigin (String carOrigin){
+    public void setCarColor(String carColor) throws Exception {
+        if (carColor == null){
+            try {
+                throw new Exception("A color of this Car is unknown");
+            }catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        this.carColor = carColor;
+    }
+    public void setCarType (String carType) throws Exception {
+        if (carType == null){
+            try {
+                throw new Exception("A type of this Car is unknown");
+            }catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        this.carType = carType;
+    }
+
+    public void setCarOrigin (String carOrigin) throws Exception {
+        if (carOrigin == null){
+            try {
+                throw new Exception("Origin is unknown");
+            }catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
         this.carOrigin = carOrigin;
     }
-    public void carBrand (String carBrand){
+    public void setCarBrand (String carBrand)throws Exception{
+        if (carBrand == null){
+            try {
+                throw new Exception("Brand of this car is unknown");
+            }catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
         this.carBrand = carBrand;
+    }
+
+    public void setCarDoors (int carDoors) throws Exception {
+        if (carDoors <2 ){
+            try {
+                throw new Exception ("This is not a Car");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        this.carDoors = carDoors;
     }
 
     @Override
     public boolean equals (Object o){
         if (this == o) return true;
         if (o == null) return false;
-        if (!(o instanceof car)) return false;
-        car car = (car) o;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
         return carColor == car.carColor;
     }
 
@@ -70,10 +106,6 @@ public class car {
                 "It's brand is " + carBrand + " " + '\n' +
                 "and this car has " + carDoors + " doors.";
     }
-
-
-
-
 
 }
 

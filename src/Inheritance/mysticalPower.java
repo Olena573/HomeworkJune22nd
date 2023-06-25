@@ -1,2 +1,5 @@
-package Inheritance;public interface mysticalPower {
+package Inheritance;
+
+public interface mysticalPower {
+    void somePower();
 }
